@@ -8,7 +8,9 @@
 
       <AppInput
         name="email"
+        type="password"
       >
+     
       </AppInput>
 
   </div>

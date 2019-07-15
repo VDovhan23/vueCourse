@@ -1,30 +1,43 @@
 <template>
-  <input 
-    type="text" 
-    name="email" 
-    id="email" 
-    class="form-control"
-  >
+<div>
+  <input :type="inputType" 
+	  :name="name"
+	  :id="name"
+	  class="form-control"
+	  />
+  <a 
+   @click.prevent="passwordShow = !passwordShow"
+   href="" 
+   v-if="type=='password'"
+   >{{passwordShow? 'Hide ' : 'Show ' }} password</a>
+   
+</div>
 </template>
 
 
 <script>
-export default { 
+export default {
   data() {
-    return {
-      
-    };
+	return {
+	  passwordShow: false,
+	};
+  },
+  computed: {
+	  inputType() {
+		return  this.passwordShow ? 'text' : this.type
+	  }
   },
   props: {
-      name: {
-          required: true,
-          type: String
-      },
-      name: {     
-        required: false,     
-        type: String,
-        default: 'email'
-      }
+	type: {
+	  required: false,
+	  type: String,
+	  default: "text"
+	},
+	name: {
+	  required: false,
+	  type: String,
+	  default: "email"
+	}
   }
 };
 </script>
