@@ -1,15 +1,14 @@
 <template>
   <div >
-    <!-- <AppButton  
-    @click.prevent="clickk"
-    >
-       КУРВА
-      </AppButton> -->
+
+      {{form}}
 
       <AppInput
         name="email"
-        type="password"
+        type="text"
+        v-model="form.email"
       >
+      inp
      
       </AppInput>
 
@@ -26,6 +25,13 @@ export default {
   name: 'home',
   components: {
     AppButton, AppInput
+  },
+  data() {
+    return {
+      form: {
+        email: ''
+      }
+    }
   },
   methods: {
     clickk() {

@@ -1,9 +1,11 @@
 <template>
 <div>
-  <input :type="inputType" 
+  <input 
+  :type="inputType" 
 	  :name="name"
 	  :id="name"
 	  class="form-control"
+	  @input="$emit('input', $event.target.value)"
 	  />
   <a 
    @click.prevent="passwordShow = !passwordShow"
