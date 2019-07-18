@@ -1,45 +1,33 @@
 <template>
-  <div >
-
-      {{form}}
-
-      <AppInput
-        name="email"
-        type="text"
-        v-model="form.email"
-      >
-      inp
-     
-      </AppInput>
-
-  </div>
+  <div>
+    {{form}}
+    <AppInput name="email" type="text" placeholder="bla bla" ></AppInput>
+  </div> 
 </template>
 
 <script>
 // @ is an alias to /src
 
-import AppButton from '@/components/AppButton';
-import AppInput from '@/components/AppInput';
+import AppButton from "@/components/AppButton";
+import AppInput from "@/components/AppInput";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    AppButton, AppInput
+    AppButton,
+    AppInput
   },
   data() {
     return {
       form: {
-        email: ''
+        email: "waselews1@gmail.com"
       }
-    }
+    };
   },
   methods: {
     clickk() {
-      console.log('clickk');
-      
+      console.log("clickk");
     }
-  },
-
-   
-}
+  }
+};
 </script>
